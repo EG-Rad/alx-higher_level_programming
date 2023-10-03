@@ -3,7 +3,12 @@ import random
 
 number = random.randint(-10000, 10000)
 
-last_digit = number % 10  # Get the last digit
+# Get the last digit, handling negative numbers correctly
+last_digit = abs(number) % 10
+
+# Adjust the sign of the last digit if the original number was negative
+if number < 0:
+    last_digit = -last_digit
 
 print(f"Last digit of {number} is {last_digit}", end=" ")
 
