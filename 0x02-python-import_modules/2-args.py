@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import sys
 
+
 def print_args():
     num_args = len(sys.argv) - 1
     if num_args == 0:
@@ -12,6 +13,7 @@ def print_args():
         print("{} arguments:".format(num_args))
         for i in range(1, len(sys.argv)):
             print("{}: {}".format(i, sys.argv[i]))
+
 
 if __name__ == "__main__":
     print_args()
