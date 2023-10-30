@@ -1,3 +1,8 @@
 #!/usr/bin/python3
+
 class Rectangle:
-    pass
+    """This class defines a basic Rectangle."""
+
+    def __init__(self):
+        """Initializes a new instance of a Rectangle."""
+        pass
