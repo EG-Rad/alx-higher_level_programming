@@ -1,21 +1,30 @@
 #!/usr/bin/python3
 
-"""Rectangle module
-
-This module defines the Rectangle class representing a geometric rectangle.
+"""
+This module defines a Rectangle class for representing rectangles.
 
 Classes:
-    Rectangle: Represents a basic rectangle shape.
+    Rectangle: Represents a rectangle with width and height.
 
+The Rectangle class has the following public methods:
+    area: Returns the area of the rectangle.
+    perimeter: Returns the perimeter of the rectangle.
+
+The Rectangle class has the following properties:
+    width: The width of the rectangle. Must be an integer and >= 0.
+    height: The height of the rectangle. Must be an integer and >= 0.
+
+Example:
+    my_rectangle = Rectangle(2, 4)
+    print("Area: {} - Perimeter:
+    {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+    print(str(my_rectangle))
+    print(repr(my_rectangle))
 """
 
 
 class Rectangle:
-    """Class that defines a rectangle"""
-
     def __init__(self, width=0, height=0):
-        """Initializes a Rectangle with a width and height"""
-
         self.width = width
         self.height = height
 
@@ -44,16 +53,17 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        return self.width * self.height
+        return self.__width * self.__height
 
     def perimeter(self):
-        return (2 * (self.width + self.height)
-                if self.width and self.height else 0)
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        if self.width == 0 or self.height == 0:
+        if self.__width == 0 or self.__height == 0:
             return ""
-        return "\n".join(["#" * self.width for _ in range(self.height)])
+        return "\n".join(["#" * self.__width for _ in range(self.__height)])
 
     def __repr__(self):
-        return f"<{self.__class__.__name__} object>"
+        return "Rectangle({}, {})".format(self.__width, self.__height)
