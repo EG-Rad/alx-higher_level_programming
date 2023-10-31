@@ -83,4 +83,5 @@ class Rectangle:
             int: The perimeter of the rectangle
             (2 * (width + height))
         """
-        return 2 * (self.width + self.height) if self.width and self.height else 0
+        return 2 * (self.width + self.height)
+        if self.width and self.height else 0
