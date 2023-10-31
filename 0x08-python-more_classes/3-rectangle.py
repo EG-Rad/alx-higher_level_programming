@@ -104,7 +104,8 @@ class Rectangle:
         Returns:
             str: A string representation of the rectangle object
         """
-        return f"<{self.__class__.__name__} object at {hex(id(self))}>"
+        return (f"<{__name__}.{self.__class__.__name__} "
+                f"object at {hex(id(self))}>")
 
     def __str__(self):
         """Returns a string representation of the rectangle
